@@ -63,14 +63,17 @@ nav li a:hover{
 /* Banner principal */
 .banner{
     height: 100vh;
-    background:  linear-gradient( rgba(0,0,0,0.281), rgba(0,0,0,0.308)), url("fundos/background.png");
+    min-height: 500px; /* Altura mínima para evitar que fique muito pequeno */
+    background: linear-gradient(rgba(0,0,0,0.281), rgba(0,0,0,0.308)), url("fundos/background.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-attachment: fixed; /* Opcional: efeito parallax */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 20px; /* Adiciona espaço interno */
 }
 .texto .titulo{
     color: #fff;
@@ -300,7 +303,7 @@ main {
 }
 
 /* Telas menores que 768px */
-@media (max-width: 768px) {
+@media (max-width: 576px) {
     nav {
         padding: 10px 20px;
     }
@@ -332,7 +335,9 @@ main {
     
     .banner {
         height: auto;
-        padding: 100px 20px;
+        min-height: 100vh; /* Garante que ocupe pelo menos a tela toda */
+        background-size: contain; /* Ou 'cover' dependendo do efeito desejado */
+        background-attachment: scroll; /* Remove o parallax em mobile se necessário */
     }
     
     .texto .titulo,
@@ -341,7 +346,7 @@ main {
     }
     
     .texto .botoes {
-        margin-top: 50px;
+        margin-top: 100px; /* Ajuste conforme necessário */
         display: flex;
         flex-direction: column;
         align-items: center;
