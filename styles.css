@@ -63,7 +63,7 @@ nav li a:hover{
 /* Banner principal */
 .banner{
     height: 100vh;
-    background: linear-gradient( rgba(0,0,0,0.281), rgba(0,0,0,0.308)),url('fundos/background.png');
+    background:  linear-gradient( rgba(0,0,0,0.281), rgba(0,0,0,0.308)), url("fundos/background.png") no-repeat center center fixed;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
