@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>ETHCS BEHAVIOR</title>
+    <style>
+       * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url("fundos/bk2.png") no-repeat center center fixed;
+      color: #333;
+      line-height: 1.6;
+      padding: 20px;
+    }
+    
+    header {
+      background: url("fundos/bk2.png") no-repeat center center fixed;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 10px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    
+    header h1 {
+      font-size: 2.8em;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    
+    main {
+      margin: 30px auto;
+      max-width: 1000px;
+    }
+    
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 40px;
+    }
+    
+    .feature-card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      width: 300px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .feature-card i {
+      font-size: 2.5em;
+      color: #4a6491;
+      margin-bottom: 15px;
+    }
+    
+    .cta-section {
+      background: #fff;
+      padding: 50px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .btn {
+      display: inline-block;
+      margin: 15px 10px;
+      padding: 14px 30px;
+      background: linear-gradient(to right, #4a6491, #2c3e50);
+      color: #fff;
+      font-size: 1.1em;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+    
+    .btn-secondary {
+      background: #fff;
+      color: #2c3e50;
+      border: 2px solid #2c3e50;
+    }
+    
+    .newsletter {
+      margin-top: 30px;
+    }
+    
+    .newsletter input {
+      padding: 12px 20px;
+      width: 300px;
+      border: 1px solid #ddd;
+      border-radius: 50px;
+      margin-right: 10px;
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .main-nav {
+  margin-top: 20px;
+}
+
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.main-nav a:hover {
+  background: rgba(255,255,255,0.2);
+}
+    
+    
+    /* Estilos do Menu */
+.site-nav {
+  display: flex;
+  justify-content: center;
+  margin: 25px 0 10px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-size: 0.95em;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-link:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateY(-2px);
+}
+
+.nav-link.active {
+  background: rgba(255,255,255,0.25);
+  font-weight: 600;
+}
+
+/* Ícones (certifique-se de ter o Font Awesome no head) */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+    
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      color: #777;
+      padding: 20px;
+    }
+    
+    .social-links {
+      margin: 20px 0;
+    }
+    
+    .social-links a {
+      color: #2c3e50;
+      font-size: 1.5em;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    
+    .social-links a:hover {
+      color: #4a6491;
+    }
+    </style>
+  </head>
+
+  <body>
+
+   <nav>
+      <div class="logo">
+        <a href="index.html">ETHCS BEHAVIOR</a>
+        </div>
+      </div>
+      <ul>
+        <li><a href="suporte.html">Suporte</a></li>
+        <li><a href="novidades.html">Novidades</a></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>Jogo Código de Honra</h1>
+      <p>Teste seus conhecimentos com este jogo de perguntas e respostas!</p>
+      </header>
+
+
+    <main>
+      <div class="features">
+        <div class="feature-card">
+          <i class="fas fa-question-circle"></i>
+          <h3>Diversas Perguntas</h3>
+          <p>Diversas Perguntas para treinar seu níveil de ética.</p>
+        </div>
+
+    <div class="feature-card">
+      <i class="fas fa-trophy"></i>
+      <h3>Obtenha conhecimento</h3>
+      <p>Apos cada resposta veja uma explicação detalhada</p>
+    </div>
+
+    <div class="cta-section">
+      <h2>Adquira agora e comece a jogar!</h2>
+      <p>Baixe o jogo e entre na competição por conhecimento e honra.</p>
+      
+      <a href="#" class="btn">Baixar Agora - Grátis!</a>
+      <a href="trailer.html" class="btn btn-secondary">Ver Trailer</a>
+      
+    </div>
+  </main>
+      
+    </body>
+  </html>

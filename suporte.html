@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>ETHCS BEHAVIOR</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: url("fundos/bk2.png") no-repeat center center fixed;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+      }
+      
+      header {
+        background: url("fundos/bk2.png") no-repeat center center fixed;
+        color: #fff;
+        padding: 30px 20px;
+        text-align: center;
+        border-radius: 10px;
+        margin-bottom: 30px;
+      }
+      
+      /* Estilos específicos do suporte */
+      .support-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      
+      .support-section {
+        background: #fff;
+        border-radius: 10px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      }
+      
+      .faq-item {
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+      }
+      
+      .faq-question {
+        font-weight: 600;
+        color: #2c3e50;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .faq-answer {
+        margin-top: 10px;
+        display: none;
+      }
+      
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 12px;
+        margin-bottom: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      .contact-form button {
+        background: linear-gradient(to right, #4a6491, #2c3e50);
+        color: white;
+        border: none;
+        padding: 12px 25px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      
+         /* Estilos do Menu */
+  .site-nav {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0 10px;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+  
+  .nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 0.95em;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255,255,255,0.1);
+  }
+  
+  .nav-link:hover {
+    background: rgba(255,255,255,0.2);
+    transform: translateY(-2px);
+  }
+  
+  .nav-link.active {
+    background: rgba(255,255,255,0.25);
+    font-weight: 600;
+  }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div class="logo">
+        <a href="index.html">ETHCS BEHAVIOR</a>
+        </div>
+      </div>
+      <ul>
+        <li><a href="contato.html">Contato</a></li>
+        <li><a href="produto.html">Produtos</a></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </nav>
+
+    <header>
+      <h1>Suporte Código de Honra</h1>
+    </header>
+
+    <div class="support-container">
+      <!-- Seção FAQ -->
+      <div class="support-section">
+        <h2><i class="fas fa-question-circle"></i> Perguntas Frequentes</h2>
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Como instalar o jogo?</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>teste depois boto</p>
+          </div>
+        </div>
+        <!-- Adicione mais FAQs aqui -->
+      </div>
+    </div>
+
+    <script>
+      document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+          const answer = question.nextElementSibling;
+          answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+          question.querySelector('i').style.transform = answer.style.display === 'block' ? 'rotate(180deg)' : 'rotate(0)';
+        });
+      });
+    </script>
+    </body>
+  </html>
