@@ -6,31 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>ETHCS BEHAVIOR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
 
   <body>
     <nav>
       <div class="logo">
         <a href="index.html">ETHCS BEHAVIOR</a>
-        </div>
       </div>
+      <div class="menu-toggle">☰</div>
       <ul>
         <li><a href="contato.html">Contato</a></li>
         <li><a href="blog.html">Blog</a></li>
-        <li></li>
-        <li></li>
+        <li><a href="produto.html">Produtos</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
 
     <section class="banner">
       <div class="texto">
-         <h1 class="titulo"></h1>
-         <h2 class="sub_titulo"></h2>
+       
          <div class="botoes">
              <button class="n-overlay">Saiba Mais</button>
              <a href="produto.html"><button class="overlay">Produtos</button></a>
          </div>
       </div>
-  </section>
-    </body>
-  </html>
+    </section>
+
+    <script>
+      document.querySelector('.menu-toggle').addEventListener('click', function() {
+          document.querySelector('nav ul').classList.toggle('active');
+      });
+    </script>
+  </body>
+</html>

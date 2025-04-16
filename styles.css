@@ -5,12 +5,21 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+
+/* Estilos gerais */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Navegação */
 nav{
     background-color: #000000;
     padding: 10px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 nav .logo a{
     text-decoration: none;
@@ -23,6 +32,7 @@ nav ul{
     align-items: center;
     list-style: none;
     padding: 10px;
+    transition: all 0.3s ease;
 }
 nav li{
     margin-left: 7px;
@@ -40,6 +50,17 @@ nav li a:hover{
     background-color: white;
     color: black;
 }
+
+/* Menu hamburguer */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+}
+
+/* Banner principal */
 .banner{
     height: 100vh;
     background: linear-gradient( rgba(0,0,0,0.281), rgba(0,0,0,0.308)),url('fundos/background.png');
@@ -91,14 +112,303 @@ nav li a:hover{
     color: black;
     animation: vibrar 0.5s ease-in-out infinite both;
 }
+
 @keyframes vibrar {
-    0%{
-        transform: scale(1);
+    0%{ transform: scale(1); }
+    50%{ transform: scale(1.1); }
+    100%{ transform: scale(1); }
+}
+
+/* Estilos comuns para páginas internas */
+header {
+    background: url("fundos/bk2.png") no-repeat center center fixed;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+main {
+    margin: 30px auto;
+    max-width: 1000px;
+    padding: 0 20px;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.feature-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 2.5em;
+    color: #4a6491;
+    margin-bottom: 15px;
+}
+
+.cta-section {
+    background: #fff;
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    margin: 15px 10px;
+    padding: 14px 30px;
+    background: linear-gradient(to right, #4a6491, #2c3e50);
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+.btn-secondary {
+    background: #fff;
+    color: #2c3e50;
+    border: 2px solid #2c3e50;
+}
+
+/* Estilos específicos para novidades.html */
+.news-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.news-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.news-date {
+    color: #4a6491;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.news-title {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.news-image {
+    border-radius: 8px;
+    margin: 15px 0;
+    max-width: 100%;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 20px;
+    color: #4a6491;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.back-btn:hover {
+    text-decoration: underline;
+}
+
+/* Estilos específicos para faq.html */
+.support-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.support-section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+.faq-question {
+    font-weight: 600;
+    color: #2c3e50;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-answer {
+    margin-top: 10px;
+    display: none;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVIDADE */
+
+/* Telas menores que 992px */
+@media (max-width: 992px) {
+    .banner {
+        padding: 80px 20px;
     }
-    50%{
-        transform: scale(1.1);
+    
+    .texto .botoes {
+        margin-top: 200px;
     }
-    100%{
-        transform: scale(1);
+}
+
+/* Telas menores que 768px */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 20px;
+    }
+    
+    .menu-toggle {
+        display: block;
+    }
+    
+    nav ul {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    
+    nav ul.active {
+        display: flex;
+    }
+    
+    nav li {
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    nav li a {
+        display: block;
+        width: 100%;
+    }
+    
+    .banner {
+        height: auto;
+        padding: 100px 20px;
+    }
+    
+    .texto .titulo,
+    .texto .sub_titulo {
+        font-size: 32px;
+    }
+    
+    .texto .botoes {
+        margin-top: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .texto .botoes button {
+        margin: 10px 0;
+        width: 100%;
+        max-width: 200px;
+    }
+    
+    header {
+        padding: 30px 15px;
+    }
+    
+    header h1 {
+        font-size: 2.2em;
+    }
+    
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .feature-card {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .cta-section {
+        padding: 30px 15px;
+    }
+    
+    .newsletter input {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+}
+
+/* Telas menores que 576px */
+@media (max-width: 576px) {
+    nav .logo a {
+        font-size: 24px;
+    }
+    
+    .texto .titulo,
+    .texto .sub_titulo {
+        font-size: 28px;
+    }
+    
+    header h1 {
+        font-size: 1.8em;
+    }
+    
+    .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+    
+    .feature-card {
+        padding: 20px 15px;
+    }
+    
+    .support-section, 
+    .news-card {
+        padding: 20px 15px;
     }
 }
