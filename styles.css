@@ -1,18 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
-*{
+
+/* Reset e Estilos Base */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* Estilos gerais */
+/* Estilos Gerais */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+}
+
 img {
     max-width: 100%;
     height: auto;
+    display: block;
 }
 
-/* Adicione isso na seção de estilos gerais */
+/* Background Padrão */
 .background-default {
     background: linear-gradient(rgba(0,0,0,0.281), rgba(0,0,0,0.308)), url("fundos/bk2.png");
     background-size: cover;
@@ -20,59 +33,65 @@ img {
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
-    
 }
 
 /* Navegação */
-nav{
+nav {
     background-color: #000000;
     padding: 10px 60px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1000;
 }
-nav .logo a{
+
+nav .logo a {
     text-decoration: none;
     color: #fff;
-    font-size: 35px;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
     font-weight: 600;
 }
-nav ul{
+
+nav ul {
     display: flex;
     align-items: center;
     list-style: none;
     padding: 10px;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
-nav li{
-    margin-left: 7px;
+
+nav li {
+    margin-left: 15px;
 }
-nav li a{
+
+nav li a {
     text-decoration: none;
     color: #fff;
-    font-size: 18px;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     font-weight: 500;
     padding: 8px 15px;
     border-radius: 5px;
     transition: 0.3s;
 }
-nav li a:hover{
+
+nav li a:hover {
     background-color: white;
     color: black;
 }
 
-/* Menu hamburguer */
+/* Menu Hamburguer */
 .menu-toggle {
     display: none;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 1.5rem;
     color: white;
     padding: 10px;
+    z-index: 1001;
 }
 
-/* Banner principal */
-/* No seu styles.css */
+/* Banner Principal */
 .banner {
     height: 100vh;
     min-height: 500px;
@@ -83,81 +102,80 @@ nav li a:hover{
     padding: 20px;
 }
 
-/* Apenas o index.html terá o background especial */
 .index-background {
     background: linear-gradient(rgba(0,0,0,0.281), rgba(0,0,0,0.308)), url("fundos/bk2.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: #fff
+    color: #fff;
 }
 
-.main-content {
-    background-color: rgba(0, 0, 0, 0.7);
-    color: white;
-    padding: 30px;
-    border-radius: 10px;
-    margin: 30px auto;
-    max-width: 1200px;
+.texto .titulo {
+    color: #fff;
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-weight: 600;
+    line-height: 1.2;
 }
 
-.texto .titulo{
+.texto .sub_titulo {
     color: #fff;
-    font-size: 60px;
+    font-size: clamp(1.8rem, 7vw, 3.2rem);
     font-weight: 600;
+    line-height: 1.2;
 }
-.texto .sub_titulo{
-    color: #fff;
-    font-size: 58px;
-    font-weight: 600;
+
+.texto .botoes {
+    margin-top: clamp(30px, 10vh, 100px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
-.texto .botoes{
-    margin-top: 100px;
-}
-.texto .botoes button{
+
+.texto .botoes button {
     height: 55px;
-    width: 170px;
+    width: clamp(140px, 40vw, 170px);
     border-radius: 5px;
     border: 0;
-    margin: 0 10px;
-    font-size: 20px;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
     font-weight: 500;
     padding: 0 20px;
     cursor: pointer;
-    outline: none;
     transition: 0.3s;
 }
-.texto .botoes button.n-overlay{
+
+.texto .botoes button.n-overlay {
     color: white;
     background: none;
     border: 2px solid white;
 }
-.texto .botoes button.n-overlay:hover{
+
+.texto .botoes button.n-overlay:hover {
     color: black;
     background-color: white;
 }
-.texto .botoes button.overlay{
+
+.texto .botoes button.overlay {
     background: white;
     color: black;
     animation: vibrar 0.5s ease-in-out infinite both;
 }
 
 @keyframes vibrar {
-    0%{ transform: scale(1); }
-    50%{ transform: scale(1.1); }
-    100%{ transform: scale(1); }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
-/* Estilos comuns para páginas internas */
-/* ADICIONE isso */
+/* Header Comum */
 header {
-    background: transparent !important; /* Fundo transparente */
+    background: transparent !important;
     padding: 40px 20px;
     text-align: center;
     margin-bottom: 30px;
     position: relative;
-    color: #fff;/* Para o pseudo-elemento */
+    color: #fff;
 }
 
 header::before {
@@ -173,22 +191,28 @@ header::before {
 }
 
 header h1 {
-    font-size: 2.8em;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
     margin-bottom: 10px;
     font-weight: 700;
+    line-height: 1.3;
 }
 
+header p {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+}
+
+/* Main Content */
 main {
     margin: 30px auto;
-    max-width: 1000px;
+    max-width: 1200px;
     padding: 0 20px;
 }
 
+/* Features */
 .features {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
     margin-bottom: 40px;
 }
 
@@ -196,10 +220,10 @@ main {
     background: #fff;
     padding: 25px;
     border-radius: 10px;
-    width: 300px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     text-align: center;
     transition: transform 0.3s;
+    width: 100%;
 }
 
 .feature-card:hover {
@@ -212,28 +236,37 @@ main {
     margin-bottom: 15px;
 }
 
+.feature-card h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+/* CTA Section */
 .cta-section {
     background: #fff;
-    padding: 50px;
+    padding: clamp(30px, 5vw, 50px);
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     text-align: center;
     margin-bottom: 40px;
 }
 
+/* Botões */
 .btn {
     display: inline-block;
-    margin: 15px 10px;
-    padding: 14px 30px;
+    margin: 10px;
+    padding: 12px 30px;
     background: linear-gradient(to right, #4a6491, #2c3e50);
     color: #fff;
-    font-size: 1.1em;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
     font-weight: 600;
     border: none;
     border-radius: 50px;
     text-decoration: none;
     transition: all 0.3s ease;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    text-align: center;
 }
 
 .btn:hover {
@@ -247,101 +280,222 @@ main {
     border: 2px solid #2c3e50;
 }
 
-/* Estilos específicos para novidades.html */
-.news-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.news-card {
-    background: #fff;
-    border-radius: 10px;
-    padding: 25px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-.news-date {
-    color: #4a6491;
-    font-weight: 600;
-    margin-bottom: 10px;
-    display: block;
-}
-
-.news-title {
-    font-size: 1.5em;
-    margin-bottom: 15px;
-    color: #2c3e50;
-}
-
-.news-image {
-    border-radius: 8px;
-    margin: 15px 0;
-    max-width: 100%;
-}
-
-.back-btn {
-    display: inline-block;
-    margin-top: 20px;
-    color: #4a6491;
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.back-btn:hover {
-    text-decoration: underline;
-}
-
-/* Estilos específicos para faq.html */
-.support-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.support-section {
-    background: #fff;
-    border-radius: 10px;
+/* Seção de Comentários */
+.comments-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
     padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 30px 0;
 }
 
-.faq-item {
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
-}
-
-.faq-question {
-    font-weight: 600;
+.comments-section h2 {
     color: #2c3e50;
-    cursor: pointer;
+    margin-bottom: 25px;
+    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.comments-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(to right, #4a6491, #2c3e50);
+    border-radius: 3px;
+}
+
+.comment-form {
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(74, 100, 145, 0.2);
+}
+
+.comment-form h3 {
+    margin-bottom: 20px;
+    color: #4a6491;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    color: #2c3e50;
+    font-weight: 500;
+    margin-bottom: 8px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgba(74, 100, 145, 0.3);
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #4a6491;
+    box-shadow: 0 0 0 3px rgba(74, 100, 145, 0.2);
+    outline: none;
+}
+
+.comment {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #4a6491;
+}
+
+.comment:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.comment-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
 }
 
-.faq-answer {
+.comment-header strong {
+    color: #2c3e50;
+    font-size: clamp(1rem, 3vw, 1.1rem);
+    font-weight: 600;
+}
+
+.comment-date {
+    color: #777;
+    font-size: clamp(0.8rem, 2vw, 0.85rem);
+}
+
+.comment-body {
+    line-height: 1.6;
+    color: #555;
+    font-size: clamp(0.9rem, 2vw, 0.95rem);
+}
+
+.loading {
+    text-align: center;
+    color: #4a6491;
+    font-style: italic;
+    padding: 20px;
+}
+
+.no-comments {
+    text-align: center;
+    padding: 30px;
+    color: #4a6491;
+}
+
+.no-comments i {
+    font-size: 3em;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+.no-comments p {
+    font-size: 1.1em;
     margin-top: 10px;
-    display: none;
 }
 
-/* MEDIA QUERIES PARA RESPONSIVIDADE */
+.comment-avatar {
+    background-color: #4a6491;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
 
-/* Telas menores que 992px */
+/* Player de Vídeo */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+  
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+.social-links {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #4a6491;
+}
+
+/* Media Queries */
+@media (max-width: 1200px) {
+    nav {
+        padding: 10px 40px;
+    }
+}
+
 @media (max-width: 992px) {
-    .banner {
-        padding: 100px 80px;
-    }
-    
-    .texto .botoes {
-        margin-top: 200px;
+    .features {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     }
 }
 
-/* Telas menores que 768px */
 @media (max-width: 768px) {
     nav {
         padding: 10px 20px;
@@ -352,218 +506,139 @@ main {
     }
     
     nav ul {
-        display: none;
+        position: fixed;
+        top: 70px;
+        left: -100%;
         width: 100%;
+        height: calc(100vh - 70px);
+        background: #000;
         flex-direction: column;
-        margin-top: 10px;
+        transition: all 0.5s ease;
+        z-index: 1000;
+        padding-top: 20px;
     }
     
     nav ul.active {
-        display: flex;
+        left: 0;
     }
     
     nav li {
-        margin: 5px 0;
+        margin: 15px 0;
+        width: 100%;
         text-align: center;
     }
     
     nav li a {
         display: block;
         width: 100%;
+        padding: 12px;
     }
     
     .banner {
         height: auto;
+        min-height: 80vh;
         padding: 100px 20px;
     }
     
-    .texto .titulo,
-    .texto .sub_titulo {
-        font-size: 32px;
-    }
-    
     .texto .botoes {
-        margin-top: 50px;
-        display: flex;
         flex-direction: column;
         align-items: center;
     }
     
     .texto .botoes button {
-        margin: 10px 0;
         width: 100%;
-        max-width: 200px;
+        max-width: 250px;
     }
     
     header {
         padding: 30px 15px;
     }
     
-    header h1 {
-        font-size: 2.2em;
-    }
-    
-    .features {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .feature-card {
-        width: 100%;
-        max-width: 400px;
-    }
-    
     .cta-section {
-        padding: 30px 15px;
+        padding: 30px 20px;
     }
     
-    .newsletter input {
-        width: 100%;
-        margin-bottom: 10px;
-        margin-right: 0;
+    .comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .comment-date {
+        margin-top: 5px;
     }
 }
 
-/* Telas menores que 576px */
 @media (max-width: 576px) {
     nav .logo a {
-        font-size: 24px;
-    }
-    
-    .texto .titulo,
-    .texto .sub_titulo {
-        font-size: 28px;
+        font-size: 1.3rem;
     }
     
     header h1 {
-        font-size: 1.8em;
+        font-size: 1.6rem;
+    }
+    
+    header p {
+        font-size: 0.9rem;
+    }
+    
+    .feature-card {
+        padding: 20px;
     }
     
     .btn {
-        display: block;
         width: 100%;
-        margin: 10px 0;
-    }
-    
-    .feature-card {
-        padding: 20px 15px;
-    }
-    
-    .support-section, 
-    .news-card {
-        padding: 20px 15px;
-    }
-}
-
-/* Estilos específicos para trailer.html */
-.trailer-container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 20px 40px;
-  }
-  
-  .video-wrapper {
-    position: relative;
-    padding-bottom: 56.25%; /* Proporção 16:9 */
-    height: 0;
-    overflow: hidden;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  
-  .video-wrapper iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
-  
-  .comments-section {
-    background: #fff;
-    border-radius: 10px;
-    padding: 30px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  
-  .comments-section h2 {
-    color: #2c3e50;
-    margin-bottom: 20px;
-    font-size: 1.8em;
-  }
-  
-  .comment-form {
-    margin-bottom: 40px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .comment-form h3 {
-    margin-bottom: 15px;
-    color: #4a6491;
-  }
-  
-  .form-group {
-    margin-bottom: 15px;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: 500;
-  }
-  
-  .form-group input,
-  .form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  .form-group textarea {
-    min-height: 100px;
-  }
-  
-  .comment {
-    background: #f9f9f9;
-    border-radius: 8px;
-    padding: 15px;
-    margin-bottom: 15px;
-  }
-  
-  .comment-header {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    color: #4a6491;
-  }
-  
-  .comment-date {
-    color: #777;
-    font-size: 0.9em;
-  }
-  
-  .comment-body {
-    line-height: 1.6;
-  }
-  
-  .loading {
-    text-align: center;
-    color: #777;
-    font-style: italic;
-  }
-  
-  /* Responsividade para trailer */
-  @media (max-width: 768px) {
-    .trailer-container {
-      padding: 0 15px 30px;
+        margin: 5px 0;
     }
     
     .comments-section {
-      padding: 20px;
+        padding: 20px;
     }
-  }
+    
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px; /* Evita zoom em iOS */
+    }
+}
+
+@media (max-width: 400px) {
+    nav {
+        padding: 10px 15px;
+    }
+    
+    .texto .titulo {
+        font-size: 1.8rem;
+    }
+    
+    .texto .sub_titulo {
+        font-size: 1.6rem;
+    }
+    
+    .feature-card {
+        padding: 15px;
+    }
+}
+
+/* Orientação Landscape para Mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .banner {
+        height: auto;
+        padding: 50px 20px;
+    }
+    
+    nav ul {
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+}
+
+/* Prefers Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+    
+    .texto .botoes button.overlay {
+        animation: none;
+    }
+}

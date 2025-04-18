@@ -1,137 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>ETHCS BEHAVIOR</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
-      /* Estilo para a seção Sobre */
-.about-contetnt {
-     padding: 60px 20px;
-    background: linear-gradient(rgba(0,0,0,0.281), rgba(0,0,0,0.308)), url("fundos/bk2.png");
-    color: white;
-}
+        /* Estilo para a seção Sobre */
+        .about-content {
+            padding: 60px 20px;
+            background: linear-gradient(rgba(0,0,0,0.281), rgba(0,0,0,0.308)), url("fundos/bk2.png");
+            color: white;
+            text-align: center;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            min-height: 100vh;
+        }
 
-.about-cards {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 40px;
-}
+        .about-content h2 {
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            margin-bottom: 20px;
+        }
 
-.mission-card, .values-card {
-    background: rgba(255,255,255,0.1);
-    padding: 30px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: center;
-    backdrop-filter: blur(5px);
-}
+        .about-content p {
+            font-size: clamp(1rem, 3vw, 1.1rem);
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
 
-/* Estilo para Diferenciais */
-.differentials {
-    padding: 50px 20px;
-    text-align: center;
-    
-}
+        .about-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.differential-item {
-    display: inline-block;
-    width: 300px;
-    margin: 20px;
-    vertical-align: top;
-}
+        .mission-card, .values-card {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: transform 0.3s;
+        }
 
-/* Estilo para Estatísticas */
-.stats-section {
-    display: flex;
-    justify-content: center;
-    padding: 50px 20px;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9));
-}
+        .mission-card:hover, .values-card:hover {
+            transform: translateY(-5px);
+        }
 
-.stat-item {
-    text-align: center;
-    margin: 0 40px;
-}
+        .mission-card i, .values-card i {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
 
-.stat-number {
-    font-size: 3em;
-    font-weight: bold;
-    color: #4a6491;
-}
-      </style>
-  </head>
+        .mission-card h3, .values-card h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
 
-  <body>
+        .mission-card p, .values-card p {
+            font-size: 1em;
+            color: rgba(255,255,255,0.9);
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
     <nav>
-      <div class="logo">
-        <a href="index.html">ETHCS BEHAVIOR</a>
-      </div>
-      <div class="menu-toggle">☰</div>
-      <ul>
-        <li><a href="contato.html">Contato</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="produto.html">Produtos</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-      </ul>
+        <div class="logo">
+            <a href="index.html">ETHCS BEHAVIOR</a>
+        </div>
+        <div class="menu-toggle">☰</div>
+        <ul>
+            <li><a href="contato.html">Contato</a></li>
+            <li><a href="produto.html">Produtos</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+        </ul>
     </nav>
 
     <section class="banner index-background">
-      <div class="texto">
-        <h1 class="titulo">ETHCS BEHAVIOR</h1>
-        <div class="botoes">
-          <button class="n-overlay">Saiba Mais</button>
-          <a href="produto.html"><button class="overlay">Produtos</button></a>
+        <div class="texto">
+            <h1 class="titulo">ETHCS BEHAVIOR</h1>
+            <div class="botoes">
+                <button class="n-overlay">Saiba Mais</button>
+                <a href="produto.html"><button class="overlay">Produtos</button></a>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section class="banner index-background">
-      <div class="about-content">
-          <h2>QUEM SOMOS</h2>
-          <p>A ETHCS BEHAVIOR é uma empresa especializada em desenvolver experiências interativas que desafiam e educam sobre ética e comportamento através de jogos imersivos.</p>
-          
-          <div class="about-cards">
-              <div class="mission-card">
-                  <i class="fas fa-bullseye"></i>
-                  <h3>Missão</h3>
-                  <p>Transformar conceitos complexos de ética em experiências lúdicas e acessíveis.</p>
-              </div>
-              
-              <div class="values-card">
-                  <i class="fas fa-heart"></i>
-                  <h3>Valores</h3>
-                  <p>Inovação, Integridade, Aprendizado Contínuo e Impacto Social.</p>
-              </div>
-          </div>
-      </div>
-  </section>
+    <section class="about-content">
+        <h2>QUEM SOMOS</h2>
+        <p>A ETHCS BEHAVIOR é uma empresa especializada em desenvolver experiências interativas que desafiam e educam sobre ética e comportamento através de jogos imersivos.</p>
+        
+        <div class="about-cards">
+            <div class="mission-card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Missão</h3>
+                <p>Transformar conceitos complexos de ética em experiências lúdicas e acessíveis.</p>
+            </div>
+            
+            <div class="values-card">
+                <i class="fas fa-heart"></i>
+                <h3>Valores</h3>
+                <p>Inovação, Integridade, Aprendizado Contínuo e Impacto Social.</p>
+            </div>
+        </div>
+    </section>
 
-  <section class="banner index-background">
-    <h2>O QUE NOS DIFERENCIA</h2>
-    <div class="differential-item">
-        <i class="fas fa-graduation-cap"></i>
-        <h3>TESTE</h3>
-        <p>TESTE 1</p>
-    </div>
-    <div class="differential-item">
-        <i class="fas fa-gamepad"></i>
-        <h3>TESTE</h3>
-        <p>TESTE2</p>
-    </div>
-</section>
+    <footer>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 ETHCS BEHAVIOR. Todos os direitos reservados.</p>
+    </footer>
 
-
-    <script>
-      document.querySelector('.menu-toggle').addEventListener('click', function() {
-          document.querySelector('nav ul').classList.toggle('active');
-      });
-    </script>
-
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>

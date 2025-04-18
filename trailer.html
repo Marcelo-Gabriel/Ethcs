@@ -1,155 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
     <title>Trailer - ETHCS BEHAVIOR</title>
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Adicione o SDK do Firebase -->
+    <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-database-compat.js"></script>
-  </head>
-
-  <body class="background-default">
+</head>
+<body class="background-default">
     <nav>
-      <div class="logo">
-        <a href="index.html">ETHCS BEHAVIOR</a>
-      </div>
-      <div class="menu-toggle">☰</div>
-      <ul>
-        <li><a href="produto.html">Produtos</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="novidades.html">Novidades</a></li>
-      </ul>
+        <div class="logo">
+            <a href="index.html">ETHCS BEHAVIOR</a>
+        </div>
+        <div class="menu-toggle">☰</div>
+        <ul>
+            <li><a href="produto.html">Produtos</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="novidades.html">Novidades</a></li>
+        </ul>
     </nav>
 
     <header>
-      <h1>Trailer do Jogo</h1>
-      <p>Assista ao trailer oficial do Código de Honra</p>
+        <h1>Trailer do Jogo</h1>
+        <p>Assista ao trailer oficial do Código de Honra</p>
     </header>
   
     <main>
-      <div class="trailer-container">
-        <!-- Player de vídeo -->
-        <div class="video-wrapper">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/SEU_ID_DO_VIDEO" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="trailer-container">
+            <!-- Player de Vídeo Responsivo -->
+            <div class="video-wrapper">
+                <iframe width="560" height="315" src="videos/trailer.mp4" frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen></iframe>
+            </div>
+            
+            <!-- Seção de Comentários -->
+            <div class="comments-section">
+                <h2><i class="fas fa-comments"></i> Comentários</h2>
+                
+                <div class="comment-form">
+                    <h3><i class="fas fa-pencil-alt"></i> Deixe seu comentário</h3>
+                    <form id="commentForm">
+                        <div class="form-group">
+                            <label for="name"><i class="fas fa-user"></i> Nome:</label>
+                            <input type="text" id="name" name="name" required placeholder="Seu nome">
+                        </div>
+                        <div class="form-group">
+                            <label for="comment"><i class="fas fa-comment"></i> Comentário:</label>
+                            <textarea id="comment" name="comment" rows="4" required 
+                                placeholder="Escreva seu comentário sobre o trailer..."></textarea>
+                        </div>
+                        <button type="submit" class="btn"><i class="fas fa-paper-plane"></i> Enviar Comentário</button>
+                    </form>
+                </div>
+                
+                <div class="comments-list" id="commentsList">
+                    <p class="loading"><i class="fas fa-spinner fa-spin"></i> Carregando comentários...</p>
+                </div>
+            </div>
         </div>
-        
-        <!-- Seção de Comentários -->
-        <div class="comments-section">
-          <h2>Comentários</h2>
-          
-          <div class="comment-form">
-            <h3>Deixe seu comentário</h3>
-            <form id="commentForm">
-              <div class="form-group">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-              </div>
-              <div class="form-group">
-                <label for="comment">Comentário:</label>
-                <textarea id="comment" name="comment" rows="4" required></textarea>
-              </div>
-              <button type="submit" class="btn">Enviar Comentário</button>
-            </form>
-          </div>
-          
-          <div class="comments-list" id="commentsList">
-            <!-- Comentários serão carregados aqui via JavaScript -->
-            <p class="loading">Carregando comentários...</p>
-          </div>
-        </div>
-      </div>
     </main>
    
     <footer>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-      </div>
-      <p>&copy; 2025 ETHCS BEHAVIOR. Todos os direitos reservados.</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2025 ETHCS BEHAVIOR. Todos os direitos reservados.</p>
     </footer>
 
-    <script>
-      // Menu toggle
-      document.querySelector('.menu-toggle').addEventListener('click', function() {
-          document.querySelector('nav ul').classList.toggle('active');
-      });
-
-      // Configuração do Firebase
-      const firebaseConfig = {
-    apiKey: "AIzaSyAKVi0MtKFXCB-TJ9iXnFL7tF7Exq5hzQo",
-    authDomain: "ethcs-c6fdb.firebaseapp.com",
-    projectId: "ethcs-c6fdb",
-    storageBucket: "ethcs-c6fdb.firebasestorage.app",
-    messagingSenderId: "765305067918",
-    appId: "1:765305067918:web:3a4fb279fa6ceda53b2cdf",
-    measurementId: "G-8FKW5CVC1B"
-  };
-
-      // Inicializa o Firebase
-      firebase.initializeApp(firebaseConfig);
-      const database = firebase.database();
-
-      // Referência para os comentários no banco de dados
-      const commentsRef = database.ref('comments');
-
-      // Formulário de comentário
-      document.getElementById('commentForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const comment = document.getElementById('comment').value;
-        const timestamp = new Date().toISOString();
-        
-        // Salva o comentário no Firebase
-        commentsRef.push({
-          name: name,
-          comment: comment,
-          timestamp: timestamp
-        }).then(() => {
-          // Limpa o formulário após o envio
-          document.getElementById('commentForm').reset();
-        }).catch((error) => {
-          console.error("Erro ao enviar comentário:", error);
-          alert("Ocorreu um erro ao enviar seu comentário. Por favor, tente novamente.");
-        });
-      });
-
-      // Carrega os comentários existentes
-      commentsRef.on('value', (snapshot) => {
-        const commentsList = document.getElementById('commentsList');
-        commentsList.innerHTML = '';
-        
-        const comments = snapshot.val();
-        
-        if (!comments) {
-          commentsList.innerHTML = '<p>Nenhum comentário ainda. Seja o primeiro a comentar!</p>';
-          return;
-        }
-        
-        // Ordena comentários por timestamp (mais recentes primeiro)
-        const sortedComments = Object.entries(comments)
-          .map(([key, value]) => ({ id: key, ...value }))
-          .sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-        
-        sortedComments.forEach(comment => {
-          const commentElement = document.createElement('div');
-          commentElement.className = 'comment';
-          commentElement.innerHTML = `
-            <div class="comment-header">
-              <strong>${comment.name}</strong>
-              <span class="comment-date">${new Date(comment.timestamp).toLocaleString()}</span>
-            </div>
-            <div class="comment-body">${comment.comment}</div>
-          `;
-          commentsList.appendChild(commentElement);
-        });
-      });
-    </script>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>
